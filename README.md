@@ -67,17 +67,36 @@ This repository documents my journey from ML fundamentals to practical, project-
 
 ```text
 machine-learning/
+├── projects/
+│   └── titanic/
+│       ├── titanic-without-using-pipeline.ipynb
+│       ├── titanic-using-pipeline.ipynb
+│       └── train.csv
 ├── fundamentals/
 ├── supervised-learning/
 ├── unsupervised-learning/
 ├── deep-learning/
-├── projects/
 ├── notebooks/
 ├── datasets/
 └── README.md
 ```
 
 > The structure will evolve as new topics and projects are added.
+
+## 🚢 Current Project — Titanic
+
+The Titanic project focuses on applying practical machine learning workflows to a classification problem.
+
+It includes two approaches:
+
+- **Without Pipeline:** manual preprocessing and model preparation.
+- **Using Pipeline:** preprocessing and model training organized with Scikit-learn pipelines.
+
+The dataset used for this project is kept alongside the notebooks so the notebooks can load it with:
+
+```python
+pd.read_csv("train.csv")
+```
 
 ## 🎯 Goal
 
