@@ -1,47 +1,48 @@
 # Titanic Machine Learning Project
 
-A machine learning classification project based on the Titanic dataset.
+A machine learning classification project based on the Titanic passenger dataset.
 
 ## Project Overview
 
-This project explores how machine learning can be used to predict whether a passenger survived the Titanic disaster.
-
-The project contains two implementations to understand the difference between manual preprocessing and using Scikit-learn pipelines.
+The goal is to explore a binary classification task: predicting whether a passenger survived the Titanic disaster. The notebooks provide a way to compare a manually organized workflow with a pipeline-based workflow.
 
 ## Notebooks
 
 ### 1. Without Pipeline
 
-`titanic-without-using-pipeline.ipynb`
+[Open the titanic-without-using-pipeline notebook](../../titanic-without-using-pipeline.ipynb)
 
-This notebook demonstrates the traditional approach where preprocessing steps are handled manually before training the model.
+Explore preprocessing and modelling without packaging the workflow into a Scikit-learn pipeline.
 
 ### 2. Using Pipeline
 
-`titanic-using-pipeline.ipynb`
+[Open the titanic-using-pipeline notebook](../../titanic-using-pipeline.ipynb)
 
-This notebook uses Scikit-learn's `Pipeline` and `ColumnTransformer` to organize preprocessing and model training into a cleaner workflow.
-
-## Concepts Practiced
-
-- Data preprocessing
-- Handling missing values
-- Categorical encoding
-- Feature scaling
-- Train-test splitting
-- Feature selection
-- Decision Tree classification
-- Scikit-learn pipelines
-- Model evaluation
+Explore how Scikit-learn pipelines can help organize preprocessing and modelling steps.
 
 ## Dataset
 
-The project uses the Titanic training dataset stored in `train.csv`.
+The training dataset is currently stored at the repository root as [train.csv](../../train.csv). Start Jupyter from the repository root so a relative read such as `pd.read_csv("train.csv")` can locate the file.
 
-## Goal
+## Concepts to Explore
 
-The goal of this project is not only to build a prediction model, but also to understand how a machine learning workflow can be structured cleanly and reproducibly.
+- Data inspection and preprocessing
+- Missing-value handling
+- Categorical feature encoding
+- Train/test splitting
+- Classification models
+- Scikit-learn pipelines
+- Model evaluation and comparison
+
+The exact steps and results should be taken from the notebooks themselves; this README is a project guide, not a claim of a particular model score.
+
+## Suggested Next Improvements
+
+- Record baseline and final evaluation metrics
+- Compare both workflows using the same split and evaluation metric
+- Add a short conclusion about what the pipeline changes and why
+- Keep notebook outputs and random seeds consistent for reproducibility
 
 ---
 
-**Part of my Machine Learning learning journey.**
+*Part of my ongoing Machine Learning learning journey.*
