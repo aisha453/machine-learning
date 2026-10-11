@@ -4,108 +4,101 @@ A personal repository for learning, practicing, and building projects in **Machi
 
 This repository documents my journey from ML fundamentals to practical, project-based learning.
 
-## 🚀 What You'll Find Here
+## What You'll Find Here
 
-- Machine Learning concepts and notes
+- Machine learning concepts and notes
 - Python implementations and experiments
 - Data preprocessing and exploratory analysis
 - Supervised and unsupervised learning
-- Model training, evaluation, and comparison
-- Hands-on ML projects
-- Practice notebooks and experiments
-- Useful resources and learning references
+- Model training and evaluation
+- Hands-on projects and Jupyter notebooks
 
-## 🧠 Learning Roadmap
+## Current Project: Titanic Survival Prediction
 
-### 1. Foundations
-- Python for Machine Learning
-- NumPy
-- Pandas
-- Matplotlib / Seaborn
-- Statistics and probability
-- Linear algebra basics
+The Titanic project explores a binary classification problem: predicting whether a passenger survived.
 
-### 2. Machine Learning
-- Linear Regression
-- Logistic Regression
-- K-Nearest Neighbors
-- Decision Trees
-- Random Forest
-- Support Vector Machines
-- Naive Bayes
-- Clustering
-- Dimensionality Reduction
+Two notebooks compare different workflow styles:
 
-### 3. Model Development
-- Data preprocessing
-- Feature engineering
-- Train / validation / test split
-- Cross-validation
-- Hyperparameter tuning
-- Model evaluation
-- Overfitting and underfitting
+- **Without Pipeline:** preprocessing steps are handled manually.
+- **Using Pipeline:** preprocessing and model steps are organized using Scikit-learn pipelines.
 
-### 4. Advanced Learning
-- Ensemble methods
-- Neural networks
-- Deep Learning
-- Natural Language Processing
-- Computer Vision
-- Generative AI
+See the [Titanic project notes](projects/titanic/README.md).
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-- **Python**
-- **NumPy**
-- **Pandas**
-- **Matplotlib**
-- **Scikit-learn**
-- **Jupyter Notebook**
-- **PyTorch / TensorFlow** *(as learning progresses)*
+- Python
+- NumPy and Pandas
+- Matplotlib and Seaborn
+- Scikit-learn
+- Jupyter Notebook
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```text
 machine-learning/
 ├── projects/
 │   └── titanic/
-│       ├── titanic-without-using-pipeline.ipynb
-│       ├── titanic-using-pipeline.ipynb
-│       └── train.csv
-├── fundamentals/
-├── supervised-learning/
-├── unsupervised-learning/
-├── deep-learning/
-├── notebooks/
-├── datasets/
+│       └── README.md
+├── titanic-without-using-pipeline.ipynb
+├── titanic-using-pipeline.ipynb
+├── train.csv
+├── requirements.txt
+├── .gitignore
 └── README.md
 ```
 
-> The structure will evolve as new topics and projects are added.
+The Titanic notebooks and dataset currently live in the repository root. As the repository grows, projects can be moved into their own folders.
 
-## 🚢 Current Project — Titanic
+## Getting Started
 
-The Titanic project focuses on applying practical machine learning workflows to a classification problem.
+### 1. Clone the repository
 
-It includes two approaches:
-
-- **Without Pipeline:** manual preprocessing and model preparation.
-- **Using Pipeline:** preprocessing and model training organized with Scikit-learn pipelines.
-
-The dataset used for this project is kept alongside the notebooks so the notebooks can load it with:
-
-```python
-pd.read_csv("train.csv")
+```bash
+git clone https://github.com/aisha453/machine-learning.git
+cd machine-learning
 ```
 
-## 🎯 Goal
+### 2. Create and activate a virtual environment (recommended)
 
-The goal of this repository is to build a strong foundation in **AI/ML engineering** through consistent learning, experimentation, and real-world projects.
+On Windows:
 
-## 📈 Progress
+```bash
+python -m venv .venv
+.venv\\Scripts\\activate
+```
 
-This is a continuously evolving repository. New concepts, implementations, experiments, and projects will be added as I progress.
+On macOS/Linux:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### 3. Install dependencies
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+### 4. Launch Jupyter
+
+```bash
+jupyter notebook
+```
+
+Open either Titanic notebook and run its cells. The dataset is currently at the repository root, so notebooks can load it with `pd.read_csv("train.csv")` when launched from that directory.
+
+## Learning Roadmap
+
+1. **Foundations:** Python, NumPy, Pandas, statistics, probability, and linear algebra.
+2. **Core ML:** regression, classification, trees, ensemble methods, clustering, and dimensionality reduction.
+3. **Model development:** preprocessing, feature engineering, train/test splits, cross-validation, tuning, and evaluation.
+4. **Next steps:** deep learning, NLP, computer vision, and generative AI.
+
+## Goal
+
+Build a strong foundation in **AI/ML engineering** through consistent learning, experimentation, and practical projects.
 
 ---
 
-**Learning. Building. Experimenting. Repeating.**
+*Learning. Building. Experimenting. Repeating.*
