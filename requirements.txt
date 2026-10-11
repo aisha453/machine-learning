@@ -1,0 +1,7 @@
+# Core libraries used in the machine-learning learning repository
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+jupyter
