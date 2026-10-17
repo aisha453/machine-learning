@@ -4,7 +4,7 @@ A machine learning classification project based on the Titanic passenger dataset
 
 ## Project Overview
 
-The goal is to explore a binary classification task: predicting whether a passenger survived the Titanic disaster. The notebooks provide a way to compare a manually organized workflow with a pipeline-based workflow.
+The goal is to explore a binary classification task: predicting whether a passenger survived the Titanic disaster. The notebooks compare manual preprocessing with a Scikit-learn pipeline-based workflow.
 
 ## Notebooks
 
@@ -12,36 +12,33 @@ The goal is to explore a binary classification task: predicting whether a passen
 
 [Open the titanic-without-using-pipeline notebook](../../titanic-without-using-pipeline.ipynb)
 
-Explore preprocessing and modelling without packaging the workflow into a Scikit-learn pipeline.
+Explore preprocessing and modelling steps manually.
 
 ### 2. Using Pipeline
 
 [Open the titanic-using-pipeline notebook](../../titanic-using-pipeline.ipynb)
 
-Explore how Scikit-learn pipelines can help organize preprocessing and modelling steps.
+This notebook uses `ColumnTransformer` and `Pipeline` to keep preprocessing and modelling together. It covers numerical and categorical imputation, one-hot encoding, scaling, model evaluation, cross-validation, hyperparameter tuning with `GridSearchCV`, and saving the fitted pipeline with Joblib.
 
 ## Dataset
 
-The training dataset is currently stored at the repository root as [train.csv](../../train.csv). Start Jupyter from the repository root so a relative read such as `pd.read_csv("train.csv")` can locate the file.
+The training dataset is stored at the repository root as [train.csv](../../train.csv). Run Jupyter from the repository root so the notebook can load it with `pd.read_csv("train.csv")`.
 
-## Concepts to Explore
+## Concepts Practiced
 
-- Data inspection and preprocessing
-- Missing-value handling
-- Categorical feature encoding
-- Train/test splitting
-- Classification models
+- Data inspection and feature/target separation
+- Stratified train/test split
+- Missing-value imputation
+- Categorical encoding
+- Column-wise preprocessing
 - Scikit-learn pipelines
-- Model evaluation and comparison
+- Classification metrics and confusion matrix
+- Cross-validation and hyperparameter tuning
+- Saving a fitted pipeline for reuse
 
-The exact steps and results should be taken from the notebooks themselves; this README is a project guide, not a claim of a particular model score.
+## Notes
 
-## Suggested Next Improvements
-
-- Record baseline and final evaluation metrics
-- Compare both workflows using the same split and evaluation metric
-- Add a short conclusion about what the pipeline changes and why
-- Keep notebook outputs and random seeds consistent for reproducibility
+The notebook does not commit fixed accuracy claims: rerun it in your environment to reproduce metrics with your installed library versions. The test set is kept separate from cross-validation and model selection.
 
 ---
 
