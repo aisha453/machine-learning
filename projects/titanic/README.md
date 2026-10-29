@@ -1,44 +1,55 @@
 # Titanic Machine Learning Project
 
-A machine learning classification project based on the Titanic passenger dataset.
-
-## Project Overview
-
-The goal is to explore a binary classification task: predicting whether a passenger survived the Titanic disaster. The notebooks compare manual preprocessing with a Scikit-learn pipeline-based workflow.
+A binary classification project exploring whether a Titanic passenger survived. This project is designed to practice data preparation, model evaluation, and reproducible Scikit-learn workflows.
 
 ## Notebooks
 
 ### 1. Without Pipeline
 
-[Open the titanic-without-using-pipeline notebook](../../titanic-without-using-pipeline.ipynb)
+[Open the original notebook](../../titanic-without-using-pipeline.ipynb)
 
-Explore preprocessing and modelling steps manually.
+Explore a manually organized preprocessing and modelling workflow.
 
 ### 2. Using Pipeline
 
-[Open the titanic-using-pipeline notebook](../../titanic-using-pipeline.ipynb)
+[Open the pipeline notebook](../../titanic-using-pipeline.ipynb)
 
-This notebook uses `ColumnTransformer` and `Pipeline` to keep preprocessing and modelling together. It covers numerical and categorical imputation, one-hot encoding, scaling, model evaluation, cross-validation, hyperparameter tuning with `GridSearchCV`, and saving the fitted pipeline with Joblib.
+Practice column-based preprocessing with `ColumnTransformer`, model training with `Pipeline`, classification metrics, cross-validation, `GridSearchCV`, and saving the fitted model.
 
-## Dataset
+## Compare Two Models
 
-The training dataset is stored at the repository root as [train.csv](../../train.csv). Run Jupyter from the repository root so the notebook can load it with `pd.read_csv("train.csv")`.
+Run the reusable comparison script from the repository root:
 
-## Concepts Practiced
+```bash
+python projects/titanic/compare_models.py
+```
 
-- Data inspection and feature/target separation
-- Stratified train/test split
-- Missing-value imputation
-- Categorical encoding
-- Column-wise preprocessing
-- Scikit-learn pipelines
-- Classification metrics and confusion matrix
-- Cross-validation and hyperparameter tuning
-- Saving a fitted pipeline for reuse
+It compares Logistic Regression and Decision Tree using the same stratified train/test split. It reports mean five-fold cross-validation accuracy on the training split and holdout metrics (accuracy, precision, recall, and F1). The holdout set is not used for model selection.
+
+## Dataset and setup
+
+The dataset is stored at the repository root as [train.csv](../../train.csv). From the repository root, install dependencies and run Jupyter:
+
+```bash
+python -m pip install -r requirements.txt
+jupyter notebook
+```
+
+The script locates `train.csv` relative to its own file, so it can be launched from any working directory.
+
+## Concepts practiced
+
+- Missing-value imputation and categorical encoding
+- Column-specific preprocessing
+- Train/test splitting with stratification
+- Pipelines and leakage-safe cross-validation
+- Accuracy, precision, recall, F1, and confusion matrices
+- Hyperparameter tuning and model persistence
+- Comparing a linear classifier with a tree-based classifier
 
 ## Notes
 
-The notebook does not commit fixed accuracy claims: rerun it in your environment to reproduce metrics with your installed library versions. The test set is kept separate from cross-validation and model selection.
+Metrics depend on the data and installed library versions. Run the notebook/script to generate fresh results; no fixed performance score is claimed here.
 
 ---
 
