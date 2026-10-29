@@ -2,52 +2,20 @@
 
 A personal repository for learning, practicing, and building projects in **Machine Learning and Artificial Intelligence**.
 
-This repository documents my journey from ML fundamentals to practical, project-based learning.
-
-## What You'll Find Here
-
-- Machine learning concepts and notes
-- Python implementations and experiments
-- Data preprocessing and exploratory analysis
-- Supervised and unsupervised learning
-- Model training and evaluation
-- Hands-on projects and Jupyter notebooks
+This repository documents the journey from ML fundamentals to practical, project-based learning.
 
 ## Current Project: Titanic Survival Prediction
 
-The Titanic project explores a binary classification problem: predicting whether a passenger survived.
+The Titanic project explores binary classification: predicting whether a passenger survived.
 
-Two notebooks compare different workflow styles:
-
-- **Without Pipeline:** preprocessing steps are handled manually.
-- **Using Pipeline:** preprocessing and model steps are organized using Scikit-learn pipelines.
-
-See the [Titanic project notes](projects/titanic/README.md).
+- **[Without Pipeline](titanic-without-using-pipeline.ipynb):** manually organized preprocessing and modelling.
+- **[Using Pipeline](titanic-using-pipeline.ipynb):** a complete Scikit-learn pipeline with column-based preprocessing, cross-validation, hyperparameter tuning, and model saving.
+- **[Titanic project guide](projects/titanic/README.md):** setup instructions and concepts covered.
+- **[Model comparison script](projects/titanic/compare_models.py):** compares Logistic Regression and Decision Tree with cross-validation and holdout metrics.
 
 ## Tech Stack
 
-- Python
-- NumPy and Pandas
-- Matplotlib and Seaborn
-- Scikit-learn
-- Jupyter Notebook
-
-## Repository Structure
-
-```text
-machine-learning/
-├── projects/
-│   └── titanic/
-│       └── README.md
-├── titanic-without-using-pipeline.ipynb
-├── titanic-using-pipeline.ipynb
-├── train.csv
-├── requirements.txt
-├── .gitignore
-└── README.md
-```
-
-The Titanic notebooks and dataset currently live in the repository root. As the repository grows, projects can be moved into their own folders.
+Python · NumPy · Pandas · Matplotlib · Seaborn · Scikit-learn · Joblib · Jupyter
 
 ## Getting Started
 
@@ -58,16 +26,16 @@ git clone https://github.com/aisha453/machine-learning.git
 cd machine-learning
 ```
 
-### 2. Create and activate a virtual environment (recommended)
+### 2. Create a virtual environment (recommended)
 
-On Windows:
+Windows:
 
 ```bash
 python -m venv .venv
 .venv\\Scripts\\activate
 ```
 
-On macOS/Linux:
+macOS/Linux:
 
 ```bash
 python3 -m venv .venv
@@ -80,13 +48,19 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-### 4. Launch Jupyter
+### 4. Run the model comparison
+
+```bash
+python projects/titanic/compare_models.py
+```
+
+Or launch Jupyter and open either notebook:
 
 ```bash
 jupyter notebook
 ```
 
-Open either Titanic notebook and run its cells. The dataset is currently at the repository root, so notebooks can load it with `pd.read_csv("train.csv")` when launched from that directory.
+The dataset `train.csv` is stored at the repository root. The notebooks expect to be launched from the repository root; the comparison script resolves the dataset path automatically.
 
 ## Learning Roadmap
 
